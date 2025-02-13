@@ -36,3 +36,52 @@ Runs tests in console, in browser or with coverage.
 ### `lint`, `prettier`
 
 Runs linting and formatting for all files in `src` folder.
+
+## Deploying React Application to AWS
+
+#### Prerequisites
+
+- AWS CLI configured with appropriate credentials
+- AWS CDK CLI installed globally
+- React application ready for deployment
+
+### 1. Create a .env file in the infrastructure directory:
+
+```
+CDK_DEFAULT_ACCOUNT=your-aws-account-id
+CDK_DEFAULT_REGION=your-preferred-region
+```
+
+### 2. Install Dependencies
+
+```markdown
+# Install project dependencies
+
+npm install
+
+# Install infrastructure dependencies
+
+cd infrastructure
+npm install
+```
+
+### 3. Make sure you have AWS CLI configured with appropriate credentials:
+
+```
+aws configure
+```
+
+### 4. Bootstrap CDK in your AWS account (first time only):
+
+```
+cd infrastructure
+cdk bootstrap
+```
+
+### 5. Deploy your application:
+
+```
+# Return to project root
+cd ..
+npm run deploy
+```
